@@ -1,35 +1,77 @@
-# Práctica 02: Canvas Model IA
+<div align="center">
 
-Sistema para modelar negocios con el **Business Model Canvas**, comparando la situación actual (AS IS) con la deseada (TO BE). Calcula y prioriza las brechas entre ambos, propone proyectos con su diagrama de Gantt, simula varios periodos y escenarios, y predice el mes siguiente.
+# Canvas Model IA
 
-La IA funciona sin internet con una base de conocimiento propia y reglas. De forma opcional puede conectarse a un modelo de lenguaje (API compatible con OpenAI o Anthropic). Todo lo que propone la IA queda marcado como hipótesis hasta que una persona lo aprueba.
+**Modelamiento de negocios con Business Model Canvas, análisis de brechas y simulación de escenarios**
 
-## Tecnologías
+![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat-square&logo=python&logoColor=white)
+![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=flat-square&logo=streamlit&logoColor=white)
+![SQLite](https://img.shields.io/badge/SQLite-003B57?style=flat-square&logo=sqlite&logoColor=white)
+![Plotly](https://img.shields.io/badge/Plotly-3F4F75?style=flat-square&logo=plotly&logoColor=white)
+![IA](https://img.shields.io/badge/IA-local%20%2B%20LLM%20opcional-8A2BE2?style=flat-square)
 
-- **Python**: lenguaje de todo el sistema.
-- **Streamlit**: interfaz web creada desde Python.
-- **SQLite**: base de datos local en un solo archivo.
-- **pandas / NumPy**: manejo de datos y cálculos.
-- **Plotly**: gráficos y diagrama de Gantt.
-- **python-pptx / openpyxl**: reportes en PowerPoint y lectura o escritura de Excel.
-- **PyInstaller**: empaqueta la app como `.exe`.
+</div>
 
-## Cómo ejecutarlo
+---
+
+## Descripción
+
+**Canvas Model IA** permite modelar un negocio con los nueve bloques del **Business Model Canvas** y comparar la situación actual (**AS IS**) con la situación deseada (**TO BE**). El sistema identifica y prioriza las brechas entre ambos modelos, propone los proyectos necesarios para cerrarlas y les da seguimiento con un diagrama de Gantt.
+
+La IA funciona **sin conexión** con una base de conocimiento sectorial y reglas propias. De forma opcional, puede conectarse a un modelo de lenguaje compatible con las API de OpenAI o Anthropic. Toda propuesta de la IA queda marcada como **hipótesis** y requiere aprobación humana.
+
+## Funcionalidades
+
+- **Canvas AS IS / TO BE**: formulación asistida de los nueve bloques.
+- **Validación**: reglas de integridad y coherencia entre bloques.
+- **Análisis de brechas**: comparación de versiones, cálculo y priorización.
+- **Cartera de proyectos**: propuesta automática y diagrama de Gantt.
+- **Simulación**: varios periodos y varios escenarios.
+- **Predicción**: pronóstico del mes siguiente.
+- **Dashboard y reportes**: tablero de seguimiento y reporte en PowerPoint.
+
+## Stack tecnológico
+
+| Tecnología | Uso en el proyecto |
+|---|---|
+| **Python** | Lenguaje principal |
+| **Streamlit** | Interfaz web interactiva |
+| **SQLite** | Base de datos local |
+| **pandas · NumPy** | Manejo de datos y cálculos |
+| **Plotly** | Gráficos y diagrama de Gantt |
+| **python-pptx · openpyxl** | Reportes en PowerPoint e intercambio con Excel |
+| **PyInstaller** | Empaquetado como ejecutable de Windows |
+
+## Instalación y uso
+
+**Requisitos:** Python 3.10 o superior.
 
 ```bash
 pip install -r requirements.txt
 streamlit run canvas_app.py
 ```
 
-En Windows: `iniciar_con_python.bat`. Para generar el ejecutable: `build_exe.bat`.
+**En Windows:** `iniciar_con_python.bat` inicia la aplicación y `build_exe.bat` genera el ejecutable.
 
-## Archivos principales
+## Pruebas
 
-| Archivo | Para qué sirve |
-|---|---|
-| `canvas_app.py` | Aplicación principal (pantallas) |
-| `ia_engine.py` | Motor de IA: Canvas, brechas, proyectos y Gantt |
-| `forecast.py` | Predicción del mes siguiente |
-| `db.py` | Base de datos |
-| `reports.py` | Reporte en PowerPoint |
-| `pruebas_automaticas.py` | Pruebas del sistema |
+```bash
+python pruebas_automaticas.py
+```
+
+## Estructura del proyecto
+
+```
+├── canvas_app.py            # Aplicación principal y pantallas
+├── ia_engine.py             # Motor de IA: Canvas, brechas, proyectos y Gantt
+├── forecast.py              # Pronóstico del mes siguiente
+├── db.py                    # Capa de acceso a datos (SQLite)
+├── reports.py               # Generador de reportes PowerPoint
+├── run_canvas.py            # Lanzador del ejecutable
+├── build_html.py            # Generador de la versión HTML
+└── pruebas_automaticas.py   # Pruebas del sistema
+```
+
+## Autor
+
+**Cesar Alonso Dionicio Achachagua** · Universidad Nacional de Ingeniería
