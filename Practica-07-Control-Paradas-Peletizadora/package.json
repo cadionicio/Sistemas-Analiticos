@@ -1,0 +1,52 @@
+{
+  "name": "control-paradas-p01-build",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^33.2.1",
+    "electron-builder": "^26.18.0",
+    "esbuild": "^0.28.2",
+    "resedit": "^3.1.1",
+    "sql.js": "^1.16.0",
+    "xlsx": "^0.18.5"
+  },
+  "build": {
+    "appId": "pe.edu.uni.ge803u.controlparadasp01",
+    "productName": "ControlParadasP01",
+    "copyright": "© 2026 Cesar Alonso Dionicio Achachagua · Proyecto académico UNI · GE803U",
+    "electronVersion": "33.2.1",
+    "directories": {
+      "app": "electron",
+      "output": "dist-exe",
+      "buildResources": "recursos"
+    },
+    "files": [
+      "**/*"
+    ],
+    "asar": true,
+    "win": {
+      "target": [
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "recursos/icono.ico",
+      "signExecutable": false
+    },
+    "portable": {
+      "artifactName": "ControlParadas_P01_v${version}.exe",
+      "requestExecutionLevel": "user",
+      "unpackDirName": "ControlParadasP01"
+    }
+  }
+}

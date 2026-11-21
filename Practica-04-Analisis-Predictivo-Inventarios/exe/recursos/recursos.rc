@@ -1,0 +1,32 @@
+#pragma code_page(65001)
+1 ICON "app.ico"
+1 24 "app.manifest"
+1 VERSIONINFO
+FILEVERSION 1,0,0,0
+PRODUCTVERSION 1,0,0,0
+FILEFLAGSMASK 0x3fL
+FILEFLAGS 0x0L
+FILEOS 0x40004L
+FILETYPE 0x1L
+FILESUBTYPE 0x0L
+BEGIN
+  BLOCK "StringFileInfo"
+  BEGIN
+    BLOCK "280A04B0"
+    BEGIN
+      VALUE "CompanyName", "Dionicio Achachagua Cesar Alonso · UNI-FIIS (proyecto académico)"
+      VALUE "FileDescription", "Sistema de Análisis de Datos y Predictivo de Gestión de Inventarios"
+      VALUE "FileVersion", "1.0.0.0"
+      VALUE "InternalName", "SADPGI"
+      VALUE "LegalCopyright", "© 2026 Dionicio Achachagua Cesar Alonso (20192589B) · GE803U Sistemas Analíticos · UNI-FIIS"
+      VALUE "OriginalFilename", "07_Sistema_Analisis_Predictivo_Inventarios.exe"
+      VALUE "ProductName", "Sistema de Análisis de Datos y Predictivo de Gestión de Inventarios"
+      VALUE "ProductVersion", "1.0.0.0"
+      VALUE "Comments", "Super Agente IA · Práctica Calificada 04 · Aplicación portable sin instalación"
+    END
+  END
+  BLOCK "VarFileInfo"
+  BEGIN
+    VALUE "Translation", 0x280A, 1200
+  END
+END

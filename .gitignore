@@ -1,0 +1,36 @@
+# Dependencias
+node_modules/
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# Compilados y ejecutables
+dist/
+dist-html/
+dist-exe/
+build/*.log
+entregables/
+builds/
+*.exe
+*.syso
+*.zip
+*.tgz
+*.tar.gz
+
+# Datos locales generados al usar las apps
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+logs/
+exports/
+
+# Documentos de Office (se guardan solo en local)
+*.docx
+*.pptx
+*.pdf
+
+# Sistema
+.DS_Store
+Thumbs.db

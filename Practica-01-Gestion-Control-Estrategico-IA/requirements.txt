@@ -1,0 +1,10 @@
+# GESTION Y CONTROL ESTRATEGICO IA - dependencias
+# Compatibles con Python 3.11 a 3.14 (64 bits). Probado en Windows con Python 3.14.
+streamlit==1.62.0
+pandas==2.3.3
+numpy==2.3.4
+plotly==6.3.0
+openpyxl==3.1.5
+python-pptx==1.0.2
+# Solo para construir el EXE (Paso 6):
+pyinstaller==6.22.3

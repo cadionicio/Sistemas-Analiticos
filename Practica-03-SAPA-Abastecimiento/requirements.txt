@@ -1,0 +1,81 @@
+# =============================================================================
+# SAPA - Sistema Analitico Predictivo de Abastecimiento
+# Requerimientos de entorno. Python 3.12+
+# -----------------------------------------------------------------------------
+# CRITERIO DE INCLUSION: toda dependencia debe (a) ser indispensable y
+# (b) resolver limpiamente sus imports estaticos bajo Nuitka --standalone.
+#
+# La calificacion de la practica se inicia EJECUTANDO EL .EXE. Si no arranca,
+# el resto del trabajo no se evalua. Por eso el criterio de dependencias es
+# deliberadamente restrictivo: cada libreria admitida es una probabilidad de
+# fallo de arranque en una maquina que no controlamos.
+#
+# EXCLUSIONES DELIBERADAS Y SU SUSTITUTO IMPLEMENTADO
+# -----------------------------------------------------------------------------
+# SQLAlchemy   -> sqlite3 (stdlib) tras el DAL propio en db/db_manager.py.
+#                 Resuelve dialectos por importacion dinamica; Nuitka no los
+#                 rastrea y exige hidden-imports manuales. Sin ORM ni
+#                 portabilidad multi-motor, no aporta nada.
+#
+# statsmodels  -> engine/forecasting.py (Holt-Winters, regresion estacional,
+#                 Croston/SBA en numpy puro). statsmodels arrastra extensiones
+#                 Cython y carga submodulos por nombre en tiempo de ejecucion:
+#                 es la causa mas frecuente de binarios que compilan y mueren
+#                 al primer import. Los modelos implementados son los mismos
+#                 y su codigo queda auditable en el entregable 3.
+#
+# scipy        -> engine/validacion.py implementa el cuantil normal por la
+#                 inversa de Moro/Acklam (error < 1.15e-9). Se usaba solo para
+#                 scipy.stats.norm.ppf; arrastrar 90 MB de BLAS por una funcion
+#                 escalar no es defendible.
+#
+# scikit-learn -> no se usa. La clasificacion de riesgo de atraso se resuelve
+#                 con reglas auditables y regresion por minimos cuadrados
+#                 (numpy.linalg.lstsq). Un arbol entrenado sobre 2 242 ordenes
+#                 no supera a la regla y no es explicable ante un comprador.
+#
+# pulp         -> engine/inventario.py implementa Wagner-Whitin (1958), que
+#                 resuelve el lote dinamico multiperiodo de forma EXACTA en
+#                 O(T^2) sin solver externo. pulp empaqueta el ejecutable CBC,
+#                 un binario que Nuitka debe incluir como data-file y que los
+#                 antivirus corporativos marcan con frecuencia.
+# =============================================================================
+
+# --- Nucleo de calculo (Fases 1 y 2) -----------------------------------------
+numpy>=2.0,<3.0
+pandas>=2.2,<4.0
+
+# --- Fase 3: interfaz, dashboard e I/O Excel ---------------------------------
+streamlit>=1.38,<2.0
+plotly>=5.22,<7.0
+openpyxl>=3.1,<4.0          # lectura de plantillas de carga del usuario
+XlsxWriter>=3.2,<4.0        # exportacion formateada de canasta y reportes
+
+# --- Cadena de EMPAQUETADO (no se instala en el equipo del usuario final) ----
+# PyInstaller, no Nuitka. La razon es empirica, no de gusto:
+#
+# Nuitka TRADUCE el programa a C y luego invoca un compilador nativo. Altair
+# -dependencia de Streamlit- genera su esquema Vega-Lite por codigo, y un solo
+# modulo se traduce a un archivo C de 166 000 lineas. El informe de fallo de
+# Nuitka en el equipo de destino es literal:
+#
+#     module.altair.vegalite.v6.schema.core.c(166116) :
+#     fatal error C1002: el compilador no tiene espacio en el monton
+#
+# No es un error del proyecto ni una bandera mal puesta: es el tamano del arbol
+# de dependencias de Streamlit contra la memoria disponible. Insistir ahi es
+# gastar el plazo de entrega en un problema que no se puede ganar.
+#
+# PyInstaller no compila nada: congela. Copia el interprete, los .pyc y los
+# datos junto a un arranque que ya viene compilado dentro del wheel. Sin MSVC,
+# sin MinGW, sin monton que agotar, y en minutos en vez de decenas de minutos.
+# El entregable sigue siendo un .EXE nativo, que es lo que exige la practica.
+pyinstaller>=6.16          # 6.16 es la primera version que soporta Python 3.14
+
+# --- Ruta historica de compilacion (OPCIONAL, documentada, no requerida) -----
+# Se conserva declarada porque el entregable 2 documenta las etapas del
+# desarrollo y este intento forma parte de la trazabilidad. Para reproducirlo
+# hace falta un equipo con MSVC y >= 8 GB de RAM libre.
+# nuitka>=2.4
+# ordered-set>=4.1
+# zstandard>=0.23

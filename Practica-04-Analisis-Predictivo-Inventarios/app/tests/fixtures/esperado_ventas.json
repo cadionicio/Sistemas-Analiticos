@@ -1,0 +1,19 @@
+{
+ "filas": 20000,
+ "productos": 500,
+ "clientes": 4924,
+ "fechaMin": "2010-01-01",
+ "fechaMax": "2019-04-01",
+ "ultimoMesCerrado": "2019-03",
+ "mesesCerrados": 111,
+ "totalSoles": 9555582746.29,
+ "totalUtilidad": 293871306.88,
+ "V06": 1606,
+ "V07": 7059,
+ "V05": 0,
+ "V09": 0,
+ "V10": 0,
+ "V08": 0,
+ "abril2019": 6,
+ "soles_2019_03": 79600134.97
+}

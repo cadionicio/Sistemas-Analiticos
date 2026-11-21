@@ -1,0 +1,47 @@
+# -*- coding: utf-8 -*-
+#
+# Recurso de version del ejecutable SAPA.
+#
+# No es decoracion. Windows y los motores antivirus leen este bloque para
+# puntuar la reputacion de un binario: un .exe sin empresa, producto ni
+# version declarados es indistinguible de uno generado por un empaquetador
+# anonimo, y se trata como tal. Declararlo cuesta cero y elimina una de las
+# senales negativas sobre las que si tenemos control.
+#
+# La firma digital de pago es la otra senal, y esa no esta al alcance de un
+# trabajo academico. SmartScreen seguira avisando la primera vez; se resuelve
+# con DESBLOQUEAR.bat.
+
+VSVersionInfo(
+  ffi=FixedFileInfo(
+    filevers=(2, 0, 0, 0),
+    prodvers=(2, 0, 0, 0),
+    mask=0x3f,
+    flags=0x0,
+    OS=0x40004,
+    fileType=0x1,
+    subtype=0x0,
+    date=(0, 0)
+  ),
+  kids=[
+    StringFileInfo(
+      [
+        StringTable(
+          '0c0a04b0',
+          [
+            StringStruct('CompanyName', 'UNI-FIIS - GE605U Sistemas Analiticos'),
+            StringStruct('FileDescription',
+                         'SAPA - Sistema Analitico Predictivo de Abastecimiento'),
+            StringStruct('FileVersion', '2.0.0'),
+            StringStruct('InternalName', 'SAPA'),
+            StringStruct('LegalCopyright',
+                         'Practica Calificada 03 - uso academico'),
+            StringStruct('OriginalFilename', 'SAPA.exe'),
+            StringStruct('ProductName',
+                         'Torre de Control WES - Abastecimiento'),
+            StringStruct('ProductVersion', '2.0.0'),
+          ])
+      ]),
+    VarFileInfo([VarStruct('Translation', [0x0c0a, 1200])])
+  ]
+)

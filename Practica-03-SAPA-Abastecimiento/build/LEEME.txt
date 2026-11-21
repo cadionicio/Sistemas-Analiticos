@@ -1,0 +1,71 @@
+===========================================================================
+ SAPA - Sistema Analitico Predictivo de Abastecimiento
+ Torre de Control WES  ·  Practica Calificada 03  ·  GE605U Sistemas Analiticos
+===========================================================================
+
+COMO EJECUTAR
+-------------
+1. Si descargo esta carpeta de Internet, Drive o correo:
+   ejecute primero DESBLOQUEAR.bat (una sola vez).
+   Si la copio desde una memoria USB, omita este paso.
+
+2. Doble clic en SAPA.exe
+
+3. Se abre una ventana de consola con la direccion local y, a los dos
+   segundos, el navegador con la Torre de Control.
+
+4. Para detener el sistema, cierre la ventana de consola.
+
+
+REQUISITOS
+----------
+- Windows 10 o 11, 64 bits
+- No requiere Python instalado
+- No requiere permisos de administrador
+- No requiere conexion a Internet: la base de datos es local y ninguna
+  consulta sale del equipo
+
+
+SI APARECE "WINDOWS PROTEGIO SU PC"
+-----------------------------------
+Es SmartScreen. Aparece porque el ejecutable no tiene firma digital de pago
+y Windows no reconoce aun su reputacion. No indica que el programa sea
+peligroso.
+
+Solucion recomendada: cerrar el aviso, ejecutar DESBLOQUEAR.bat y volver a
+intentar. Retira la marca de archivo descargado y el aviso deja de aparecer.
+
+Alternativa: en el propio aviso, pulsar "Mas informacion" y luego
+"Ejecutar de todas formas".
+
+
+SI EL NAVEGADOR NO SE ABRE SOLO
+--------------------------------
+Copie la direccion que muestra la consola (del tipo http://127.0.0.1:8520)
+y peguela en Chrome, Edge o Firefox.
+
+
+ESTRUCTURA DE LA CARPETA
+------------------------
+ SAPA.exe            Ejecutable principal
+ _internal\          Interprete, librerias y la interfaz (app.py). No tocar.
+ database\sapa.db    Base de datos SQLite con 36 meses de historia
+ imports\            Deje aqui los Excel de carga
+ exports\            Aqui se guardan las canastas y reportes exportados
+ logs\               Registro de operacion (util si algo falla)
+ DESBLOQUEAR.bat     Retira la marca de "descargado de Internet"
+
+
+SI LA BARRA LATERAL MUESTRA TODO EN CERO
+-----------------------------------------
+La base de datos no viajo con la carpeta. Copie el archivo sapa.db dentro
+de la subcarpeta database\ que esta junto a SAPA.exe y vuelva a abrirlo.
+
+
+IMPORTANTE
+----------
+El ejecutable NO funciona si se saca de esta carpeta. Las librerias
+compiladas viven junto a el. Para trasladarlo, mueva o comprima la carpeta
+completa.
+
+===========================================================================

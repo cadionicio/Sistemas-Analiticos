@@ -1,0 +1,9 @@
+{
+  "name": "control-paradas-p01",
+  "productName": "ControlParadasP01",
+  "version": "1.0.2",
+  "description": "Control de Paradas y Repuestos - Peletizadora P-01 (proyecto académico, datos sintéticos)",
+  "author": "Cesar Alonso Dionicio Achachagua",
+  "license": "UNLICENSED",
+  "main": "main.js"
+}
