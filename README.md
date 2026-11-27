@@ -44,6 +44,47 @@ Todos los sistemas funcionan **sin conexión a internet**, guardan sus datos en 
 
 Cada carpeta tiene su propio README con las funcionalidades, la tecnología usada y los pasos para ejecutarlo.
 
+## Próximamente
+
+Dos proyectos están en construcción. Son los más ambiciosos del repositorio hasta ahora.
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+### 09 · IA Lean Six Sigma
+
+![Estado](https://img.shields.io/badge/estado-en%20construcción-orange?style=flat-square)
+![Llega](https://img.shields.io/badge/llega-03%20dic%202026-blueviolet?style=flat-square)
+
+¿Cuánto dinero pierde una organización por un proceso que nadie ha medido bien?
+
+Un sistema que guía paso a paso por las cinco etapas de **DMAIC** (Definir, Medir, Analizar, Mejorar, Controlar), aplica las herramientas estadísticas de cada etapa sobre datos reales y termina con lo que importa: **cuánto se ahorra** al implementar la mejora.
+
+Sirve para cualquier tipo de organización. La pregunta es qué encontrará en la tuya.
+
+</td>
+<td width="50%" valign="top">
+
+### Monografía · ERP System Basic
+
+![Estado](https://img.shields.io/badge/estado-en%20construcción-orange?style=flat-square)
+![Llega](https://img.shields.io/badge/llega-10%20dic%202026-blueviolet?style=flat-square)
+
+Seis módulos. Una sola base de datos. Un cambio en cualquier parte se refleja en todo el sistema.
+
+**Contabilidad · Costos · Finanzas · Producción · Comercial · Logística**, conectados en un ERP cliente-servidor con multimoneda, multiperiodo y la normativa contable peruana más reciente.
+
+Y por encima de todo, una **IA que aprende de los datos de la empresa**, propone decisiones y calcula su impacto en el resultado económico y en el EVA antes de tomarlas.
+
+El proyecto final del curso. Vuelve el 10 de diciembre.
+
+</td>
+</tr>
+</table>
+
+> ⭐ Dale una estrella al repositorio o haz clic en **Watch** para enterarte cuando lleguen.
+
 ## Estructura del repositorio
 
 ```
